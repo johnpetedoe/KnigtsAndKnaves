@@ -74,4 +74,4 @@ This will allow us to remove ambiguity and solve the problem independent indepen
 0602 (= A (INCL B Kn0))                 # 0000
 0603 (^ (= A T) (= A (INCL B Kn0)))     # 0201, 0000, 0602
 0604 (= (INCL B Kn0) T)                 # 0603, 0202
-0605 (= )
+0605 (=> (= (INCL B Kn0) T) (INCL B Kn0)) )
