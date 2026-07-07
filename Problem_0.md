@@ -30,27 +30,37 @@ This will allow us to remove ambiguity and solve the problem independent indepen
 
 0000  All persons are either knights or knaves.
 
-0100  `(:A (:x (v (INCL x Kn0) (INCL x Kn1))))`
+0100  `(:A x (v (INCL x Kn0) (INCL x Kn1)))`
+
+0800 For all **x**, **x** is included in the set of *knights*' or **x** is inlcluded in the set of *knaves*. 
 
 
 0001  Knights only tell the truth
 
-0101 `(:A x (=> (INCLD x Kn0) (= x T)))`
+0101 `(:A x (=> (INCL x Kn0) (= x T)))`
+
+0801 For all **x**, '**x**' is included in the set of knights' implies '**x** is true'.
 
 
 0002  Knaves only lie
 
-0102 `(:A x (=> (INCLD x Kn1) (= x F)))`
+0102 `(:A x (=> (INCL x Kn1) (= x F)))`
+
+0802 For all **x**, '**x** is included in the set of knaves' implies '**x** is false'.
 
 
 000300 A: B is a knight
 
-010300 `(= A (INCLD B Kn0))`
+010300 `(= A (INCL B Kn0))`
+
+080300 **A** is equal to the statement, '**B** is included in the set of knights'.
+
 
 000301 B: I am not a knight
 
-010301 `(= B (~ (= B Kn0))`
+010301 `(= B (~ (INCL B Kn0))`
 
+080300 **B** is equal to the statement, 'It is not the case, that B is included in the set of knights'.
 
 ## Rule Set 0
 0200 `(:A x (^ (=> (= x F) (~x)) (=> (~x) (= x F)))`
@@ -76,33 +86,68 @@ This will allow us to remove ambiguity and solve the problem independent indepen
 
 # PROOF 0 (= A T)
 
-0401 `(= A (INCL B Kn0))`
+0401:  `(= A (INCL B Kn0))`
 
-0501 "**A** is equal to the statement, '**B** is a knight'".
+0501:  **A** is equal to the statement, '**B** is a knight'.
 
-0402 `(= B (~ (INCL B Kn0)))`
 
-0403 `(=> (= A T) (= (INCL B Kn0) T) )`
+0402:  `(= B (~ (INCL B Kn0)))`
 
-0404 `(=> (INCL B Kn0) (= B T))`
+0502:  **B** is equal to the statement, 'It is not the case that B is included in the set of Knights' 
 
-0405 `(=> (= B T) (= (~ (INCL B Kn0)) T))`
 
-0406 `(=> (= (~ (INCL B Kn0)) T) (~ (INCL B Kn0)))`
+0403:  `(=> (= A T) (= (INCL B Kn0) T) )`
 
-0407 `(=> A (~ (INCL B Kn0)))`                                             # 0204
+0503:  "**A** is **true**" implies "'**B** is included in the set of knights' is **true**"
 
-0408 `(=> (= A (INCL B Kn0)) (= (= A (INCL B Kn0) T)) )`                   # 0201, 0401
 
-0409 `(=> (=> A (~ (INCL B Kn0))) (= (=> A (~ (INCL B Kn0))) T) )`         # 0201, 0407
+0404:  `(=> (INCL B Kn0) (= B T))`
+
+0504: 
+
+
+0405:  `(=> (= B T) (= (~ (INCL B Kn0)) T))`
+
+0505:  
+
+
+0406:  `(=> (= (~ (INCL B Kn0)) T) (~ (INCL B Kn0)))`
+
+0506:  
+
+
+0407:  `(=> A (~ (INCL B Kn0)))`                                             # 0204
+
+0507:
+
+
+0408:  `(=> (= A (INCL B Kn0)) (= (= A (INCL B Kn0) T)) )`                   # 0201, 0401
+
+0508: 
+
+
+0409:  `(=> (=> A (~ (INCL B Kn0))) (= (=> A (~ (INCL B Kn0))) T) )`         # 0201, 0407
+
+0509:
+
 
 0410 `(= (=> A (~ (INCL B Kn0))) T)`
 
+0510
+
+
 0411 `(= (= A (INCL B Kn0)) T)`
+
+0511
+
 
 0412 `(=> (^ (= A (INCL B Kn0)) (=> A (~ (INCL B Kn0)))) (=> (INCL B Kn0) (~ (INCL B Kn0))))`
 
+0512
+
 0413 `(=> (INCL B Kn0) (~ (INCL B Kn0)))`                                 # CONTRADITION
+
+0513
 
 # PROOF 1 (^ (= A T) (= B F))
 0600 `(= A T)`                                 # GIVEN
