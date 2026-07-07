@@ -5,7 +5,7 @@
 
 0002 Knaves only lie. 
 
-0003   Person's A and B say the following sentances:
+0003 Person's A and B say the following sentances:
 
 000300   A: B is a knight
 
@@ -54,5 +54,24 @@ This will allow us to remove ambiguity and solve the problem independent indepen
 
 ## Rules
 0200 (:A x (=> (= x F) (~x)))
-0201 (= 
-020
+0300  For all x, "x is false" implies the "negation of x".
+
+0201 (=> [A, B] (^ A B))
+0202 (=> (^ (= a b) (= b c)) (= a c))
+0203 ()
+## PROOF 0 (= A T)
+
+# PROOF 0 (= A T)
+0400 (=> A (~ (INCL B Kn0)))
+0401 (= A (INCL B Kn0))
+0402 (=> (^ (=> A (~(INCL B Kn0))) (= A (INCL B Kn0))) (=> (INC B Kn0) (~(INCL B Kn0))) )
+0403 (=> (INCL B Kn0) (~ (INCL B Kn0))) # SEP
+                                        # CONTRADICTION
+                                        # THE SYSTEM {A B} is INCONSISTANT
+# PROOF 1 (^ (= A T) (= B F))
+0600 (= A T)                            # GIVEN
+0601 (= B F)                            # GIVEN
+0602 (= A (INCL B Kn0))                 # 0000
+0603 (^ (= A T) (= A (INCL B Kn0)))     # 0201, 0000, 0602
+0604 (= (INCL B Kn0) T)                 # 0603, 0202
+0605 (= )
