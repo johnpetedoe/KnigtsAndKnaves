@@ -82,15 +82,15 @@ This will allow us to remove ambiguity and solve the problem independent indepen
 
 0204: `(:A (: [a, b, c] (=> (=> a b) (=> b c))) (=> a c))`
 
-0304: For all triplets, **a b c**, "'**a** implies **b**' and '**b** implies **c**' implies '**a** implies **c**'".
+0304: For all triplets, **a, b, c**, "'**a** implies **b**' and '**b** implies **c**' implies '**a** implies **c**'".
 
 0205: `(:A (: [a, b] (=> a b)) (=> (= a T) (= b T) ) )`
 
-0305: 
+0305: For all pairs, **a, b**, such that: "**a** implies **b**", "'**a** is **true**', implies '**b** is **true**'".
 
 0206: `(:A (: [a, b, c] (^ (= a b) (=> b c))) (=> a c))`
 
-0306: 
+0306: For all triplets, **a, b, c**, such that: "'the statement **a** is equal to the statement **b**' and '**b** implies **c**'" implies "**a** implies **c**". 
 
 
 # PROOF 0 (= A T)
@@ -102,7 +102,7 @@ This will allow us to remove ambiguity and solve the problem independent indepen
 
 0402:  `(= B (~ (INCL B Kn0)))`
 
-0502:  **B** is equal to the statement, 'It is not the case that B is included in the set of *knights*' 
+0502:  **B** is equal to the statement, 'It is not the case that **B** is included in the set of *knights*' 
 
 
 0403:  `(=> (= A T) (= (INCL B Kn0) T) )`
@@ -122,43 +122,43 @@ This will allow us to remove ambiguity and solve the problem independent indepen
 
 0406:  `(=> (= (~ (INCL B Kn0)) T) (~ (INCL B Kn0)))`                        
 
-0506:  "It is not the case that, 'B is included in the set of knights' is true" implies "It is not the case that, 'B is included in the set of knights'"
+0506:  "It is not the case that, '**B** is included in the set of *knights*' is **true**" implies "It is not the case that, '**B** is included in the set of *knights*'"
 
 
 0407:  `(=> A (~ (INCL B Kn0)))`                                                               # 0204
 
-0507:  A implies, It is not the case, that B is included in the set of knights
+0507:  **A** implies, It is not the case, that **B** is included in the set of *knights*.
 
 
 0408:  `(=> (= A (INCL B Kn0)) (= (= A (INCL B Kn0) T)) )`                                     # 0201, 0401
 
-0508: "A is equal to the statement, 'B is included in the set of knights'" implies "'A is equal to the statement, "B is included in the set of knights"' is true"
+0508: "**A** is equal to the statement, '**B** is included in the set of *knights*'" implies "'**A** is equal to the statement, "**B** is included in the set of *knights*"' is **true**".
 
 
 0409:  `(=> (=> A (~ (INCL B Kn0))) (= (=> A (~ (INCL B Kn0))) T) )`                           # 0201, 0407
 
-0509: "A implies 'it is not the case that B is not included in the set of knights'" implies "'A implies "it is not the case that B is included in the set of knights"' is true"
+0509: "**A** implies 'it is not the case that **B** is not included in the set of *knights*'" implies "'**A** implies "it is not the case that **B** is included in the set of *knights*"' is **true**".
 
 
 0410:  `(= (=> A (~ (INCL B Kn0))) T)`                                                         # 0205, 0409  
 
-0510: "'A implies "it is not the case that B is not included in the set of knights"' is true"
+0510: "'**A** implies "it is not the case that **B** is not included in the set of *knights*"' is **true**"
 
 
 
 0411: `(= (= A (INCL B Kn0)) T)`                                                               # 0205, 0408
 
-0511: "'A is equal to the statement, "B is included in the set of knights"' is true"
+0511: "'**A** is equal to the statement, "**B** is included in the set of *knights*"' is **true**"
 
 
 0412: `(=> (^ (= A (INCL B Kn0)) (=> A (~ (INCL B Kn0)))) (=> (INCL B Kn0) (~ (INCL B Kn0))))  # 0206` 
 
-0512: "'A is equal to the statement, "B is included in the set of knights"' and 'A implies "it is not the case that B is included in the set of knights"'" implies, "'B is included in the set of knights' implies 'It is not the case that B is included in the set of knights'"
+0512: "'**A** is equal to the statement, "**B** is included in the set of *knights*"' and '**A** implies "it is not the case that **B** is included in the set of *knights*"'" implies, "'**B** is included in the set of *knights*' implies 'It is not the case that **B** is included in the set of *knights*'"
 
 
 0413: `(=> (INCL B Kn0) (~ (INCL B Kn0)))`                                                     # CONTRADITION
 
-0513: "'B is included in the set of knights' implies 'It is not the case that B is included in the set of knights'"
+0513: "'**B** is included in the set of *knights*' implies 'It is not the case that **B** is included in the set of *knights*'"
 
 
 # PROOF 1 (^ (= A T) (= B F))
@@ -214,6 +214,7 @@ This will allow us to remove ambiguity and solve the problem independent indepen
 CONCLUSION: **A** telling the truth necessitates the *inconsistancy* of the sustem **{A B}**. If **A** is a knight, the system, **{A B}**, is *inconsistant*.
 
 Fortunatley for **{A B}**, **A** has made no statements about it's own knight-hood.
+
 
 If you're interested in more problems like this, or have questions about either the language or system used to formulate this problem, feel free to contact the author at: 
 
