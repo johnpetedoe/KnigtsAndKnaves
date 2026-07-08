@@ -1,19 +1,20 @@
 # Problem 0 v1
-0000 All persons are either knights or knaves.
+0000: All persons are either knights or knaves.
 
-0001 Knights only tell the truth.
+0001: Knights only tell the truth.
 
-0002 Knaves only lie. 
+0002: Knaves only lie. 
 
-0003 Person's A and B say the following sentances:
+0003: Person's A and B say the following sentances:
 
-000300   A: B is a knight
+000300:   A: B is a knight
 
-000301   B: I am not a knight
+000301:   B: I am not a knight
 
-0004 Is A a knight?
+0004: Is A a knight?
 
 To solve this problem, we can start be representing it's truth table:
+
 
 | A | B | {T, F, C} |
 |---|---|-----------|
@@ -21,6 +22,7 @@ To solve this problem, we can start be representing it's truth table:
 | T | F |           |
 | F | T |           |
 | T | T |           |
+
 
 To solve this problem I will begin by translating each statement into a *formal language*.
 
@@ -93,7 +95,7 @@ This will allow us to remove ambiguity and solve the problem independent indepen
 0306: For all triplets, **a, b, c**, such that: "'the statement **a** is equal to the statement **b**' and '**b** implies **c**'" implies "**a** implies **c**". 
 
 
-# PROOF 0 (= A T)
+#### PROOF 0 (= A T)
 
 0401:  `(= A (INCL B Kn0))`
 
@@ -161,7 +163,7 @@ This will allow us to remove ambiguity and solve the problem independent indepen
 0513: "'**B** is included in the set of *knights*' implies 'It is not the case that **B** is included in the set of *knights*'"
 
 
-# PROOF 1 (^ (= A T) (= B F))
+#### PROOF 1 (^ (= A T) (= B F))
 0600: `(= A T)`                                 # GIVEN
 
 0700:  A is true
