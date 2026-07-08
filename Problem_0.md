@@ -131,7 +131,7 @@ This will allow us to remove ambiguity and solve the problem independent indepen
 0509: "A implies 'it is not the case that B is not included in the set of knights'" implies "'A implies "it is not the case that B is included in the set of knights"' is true"
 
 
-0410:  `(= (=> A (~ (INCL B Kn0))) T)`
+0410:  `(= (=> A (~ (INCL B Kn0))) T)`                                        
 
 0510: "'A implies "it is not the case that B is not included in the set of knights"' is true"
 
@@ -157,40 +157,46 @@ This will allow us to remove ambiguity and solve the problem independent indepen
 
 0700:  A is true
 
+
 0601: `(= B F)`                                 # GIVEN
 
 0701: B is false
 
+
 0602: `(= A (INCL B Kn0))`                      # 0000
 
-0702: A is 
+0702:  **A** is equal to the statement, '**B** is included in the set of knights'.
+
 
 0603: `(^ (= A T) (= A (INCL B Kn0)))`          # 0202, 0000, 0602
 
-0703:  **A** is equal to the statement, '**B** is included in the set of knights'.
+0703:  **A** is true and **A** is equal to the statement, '**B** is included in the set of knights'.
+
 
 0604: `(= (INCL B Kn0) T)`                      # 0603, 0202
 
-0704: 
+0704: **B** is included in the set of *knights*" is *true* 
 
-0605: `(=> (= (INCL B Kn0) T) (INCL B Kn0)) )`  # 
 
-0705:
+0605: `(=> (= (INCL B Kn0) T) (INCL B Kn0)) )`  # 0201
+
+0705: "'**B** is included in the set of *knights*' is *true*" implies "**B** is included in the set of *knights*"
+
 
 0606: `(INCL B Kn0)`                            # SEP
 
-0706:
+0706: "**B** is included in the set of *knights*"
 
 0607: `(=> (INCL B Kn0) (= B T))`               # 0204
 
-0707:
+0707: "**B** is included in the set of *knights*" implies "**B** is *true*"
 
 0608: `(=> (= B T) (~ (INCL B Kn0)))`           # 0202
 
-0708:
+0708: "**B** is *true*" implies "It is not the case, '**B** is included in the set of *knights*'" 
 
 0609: `(=> (INCL B Kn0) (~ (INCL B Kn0)))`      # 0203
-                                               # CONTRADICTION
+0709: "**B** is included in the set of *knights*" implies "It is not the case, '**B** is included in the set of *knights*'"                                                                 # CONTRADICTION
 
 CONCLUSION: **A** telling the truth necessitates the *inconsistancy* of the sustem **{A B}**. If **A** is a knight, the system, **{A B}**, is *inconsistant*.
 
@@ -199,4 +205,3 @@ Fortunatley for **{A B}**, **A** has made no statements about it's own knight-ho
 If you're interested in more problems like this, or have questions about either the language or system used to formulate this problem, feel free to contact the author at: 
 
 *johnpetedoe@proton.me* 
-
