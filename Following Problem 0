@@ -1,3 +1,7 @@
 Given the result of Problem 0, The following seems to be the case:
 
-0. Regardless of whether B lies or tells the truth, if A tells the truth, B cannot tell the truth.
+0. Is the following statement true?
+  Regardless of whether B lies or tells the truth, if A tells the truth, B cannot tell the truth.
+1. Is the answer to Problem 0 undecidable?
+
+0. Write an algorithm to compute the complex-conjugate of a complex number given as input.
