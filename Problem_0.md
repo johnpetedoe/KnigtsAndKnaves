@@ -14,8 +14,8 @@
 #### Question:
 0004: Is A a knight?
 
-We can start be representing it's truth table:
-
+#### Solution: 
+We can start by representing it's truth table:
 
 | A | B | {T, F, C} |
 |---|---|-----------|
@@ -25,7 +25,9 @@ We can start be representing it's truth table:
 | T | T |           |
 
 
-To solve this problem I will begin by translating each statement into a *formal language*.
+To solve this problem we may begin by translating each statement into a *formal language*.
+
+A *formal language* consists of *well-formed-formulae*, produced according the the rules of production of a *formal grammar*.
 
 This will allow us to remove ambiguity and solve the problem independent independently of it's interpretation like a math problem.
 
@@ -65,6 +67,7 @@ This will allow us to remove ambiguity and solve the problem independent indepen
 
 080300 **B** is equal to the statement, 'It is not the case, that B is included in the set of *knights*'.
 
+Having formulated the problem, we now require a set of rules to constrain our thougts and ensure the correctness of our calculation. I've provided a small rule-set below:
 
 ## Rule Set 0
 0200: `(:A x (^ (=> (= x F) (~x)) (=> (~x) (= x F)))`
@@ -95,6 +98,7 @@ This will allow us to remove ambiguity and solve the problem independent indepen
 
 0306: For all triplets, **a, b, c**, such that: "'the statement **a** is equal to the statement **b**' and '**b** implies **c**'" implies "**a** implies **c**". 
 
+Applying these rules we may generate the following proof(s) by derivation:
 
 #### PROOF 0 (= A T)
 
