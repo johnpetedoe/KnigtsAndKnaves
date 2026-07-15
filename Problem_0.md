@@ -1,5 +1,5 @@
 # Problem 0 v1
-The logician, Raymond Smullyan is credited with the invention of this class of puzzles this first problem is an example of one:
+The logician, Raymond Smullyan is credited with the invention of knights and knaves puzzles, this first problem is an example of one:
 
 0000: All persons are either knights or knaves.
 
